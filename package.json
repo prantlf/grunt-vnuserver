@@ -1,10 +1,10 @@
 {
-  "name": "grunt-vnuserver",
-  "version": "1.0.3",
+  "name": "grunt-vnuserver-dev",
+  "version": "1.1.0",
   "description": "A Grunt plugin for starting the vnu.jar markup checker in server mode.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bennieswart/grunt-vnuserver.git"
+    "url": "git+https://github.com/prantlf/grunt-vnuserver.git"
   },
   "keywords": [
     "vnu",
@@ -16,12 +16,19 @@
   "author": "Bennie Swart <bennieswart@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bennieswart/grunt-vnuserver/issues"
+    "url": "https://github.com/prantlf/grunt-vnuserver/issues"
   },
-  "homepage": "https://github.com/bennieswart/grunt-vnuserver#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prantlf/grunt-html.git"
+  },
+  "homepage": "https://github.com/prantlf/grunt-vnuserver#readme",
+  "engines": {
+    "node": ">=6"
+  },
   "dependencies": {
     "grunt-html": "^8.2.1",
     "portastic": "^1.0.1",
-    "vnu-jar": "^17.1.0"
+    "vnu-jar": "dev"
   }
 }

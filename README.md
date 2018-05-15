@@ -1,24 +1,26 @@
-# grunt-vnuserver
+# grunt-vnuserver-dev
 
-[![Code Climate](https://img.shields.io/codeclimate/github/bennieswart/grunt-vnuserver.svg)](https://codeclimate.com/github/bennieswart/grunt-vnuserver)
-[![Dependency Status](https://img.shields.io/david/bennieswart/grunt-vnuserver.svg)](https://david-dm.org/bennieswart/grunt-vnuserver)
-[![devDependency Status](https://img.shields.io/david/dev/bennieswart/grunt-vnuserver.svg)](https://david-dm.org/bennieswart/grunt-vnuserver#info=devDependencies)
+[![Code Climate](https://img.shields.io/codeclimate/github/prantlf/grunt-vnuserver-dev.svg)](https://codeclimate.com/github/prantlf/grunt-vnuserver-dev)
+[![Dependency Status](https://img.shields.io/david/prantlf/grunt-vnuserver-dev.svg)](https://david-dm.org/prantlf/grunt-vnuserver-dev)
+[![devDependency Status](https://img.shields.io/david/dev/prantlf/grunt-vnuserver-dev.svg)](https://david-dm.org/prantlf/grunt-vnuserver-dev#info=devDependencies)
 
 [Grunt][grunt] plugin for starting the [vnu.jar markup checker][vnujar] in server mode.
-Plays well with [grunt-html][grunt-html] for faster HTML validation by only starting vnu.jar once, as startup can take a few seconds.
+Plays well with [grunt-html-dev][grunt-html-dev] for faster HTML validation by only starting vnu.jar once, as startup can take a few seconds.
+
+This fork publishes a new `grunt-vnuserver-dev` NPM module, which depends on `vnu-jar@dev` instead of the latest release of `vnu-jar`. The [W3C Markup Validation Service](https://validator.w3.org/) uses the *development version* of `vnu-jar` too. If you want to get consistent results from on-line and off-line testing, you should use `grunt-vnuserver-dev` instead of `grunt-vnuserver` in your project.
 
 ## Getting Started
 
 Install this grunt plugin next to your project's [Gruntfile.js][getting_started] with:
 
 ```bash
-npm install grunt-vnuserver --save-dev
+npm install grunt-vnuserver-dev --save-dev
 ```
 
 Then add this line to your project's `Gruntfile.js`:
 
 ```js
-grunt.loadNpmTasks('grunt-vnuserver');
+grunt.loadNpmTasks('grunt-vnuserver-dev');
 ```
 
 ## Options
@@ -75,7 +77,7 @@ module.exports = function (grunt) {
         htmllint: {
             all: {
                 options: {
-                    // This option makes grunt-html connect to the vnu server instance.
+                    // This option makes grunt-html-dev connect to the vnu server instance.
                     server: {}
                 },
                 src: "app.html"
@@ -89,8 +91,8 @@ module.exports = function (grunt) {
         },
     });
 
-    grunt.loadNpmTasks('grunt-vnuserver');
-    grunt.loadNpmTasks('grunt-html');
+    grunt.loadNpmTasks('grunt-vnuserver-dev');
+    grunt.loadNpmTasks('grunt-html-dev');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     grunt.registerTask('default', ['vnuserver', 'watch']);
@@ -138,8 +140,8 @@ module.exports = function (grunt) {
         },
     });
 
-    grunt.loadNpmTasks('grunt-vnuserver');
-    grunt.loadNpmTasks('grunt-html');
+    grunt.loadNpmTasks('grunt-vnuserver-dev');
+    grunt.loadNpmTasks('grunt-html-dev');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Obtain the port, which the vnu server is listening to.
@@ -157,7 +159,6 @@ Copyright Bennie Swart.
 Licensed under the MIT license.
 
 [grunt]: http://gruntjs.com/
-[grunt-html]: https://github.com/jzaefferer/grunt-html
+[grunt-html-dev]: https://github.com/prantlf/grunt-html-dev
 [getting_started]: http://gruntjs.com/getting-started
 [vnujar]: https://validator.github.io/validator/
-[grunt-html-dev]: https://github.com/prantlf/grunt-html-dev
