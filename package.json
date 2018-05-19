@@ -1,6 +1,6 @@
 {
   "name": "grunt-vnuserver-dev",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A Grunt plugin for starting the vnu.jar markup checker in server mode.",
   "repository": {
     "type": "git",
