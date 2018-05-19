@@ -19,6 +19,12 @@
     "url": "https://github.com/prantlf/grunt-vnuserver/issues"
   },
   "homepage": "https://github.com/prantlf/grunt-vnuserver#readme",
+  "scripts": {
+    "prepare": "nsp check",
+    "lint": "grunt eslint",
+    "test": "grunt",
+    "coverage": "grunt instrument && GRUNT_VNUSERVER_COVERAGE=1 grunt"
+  },
   "engines": {
     "node": ">=6"
   },
@@ -26,5 +32,12 @@
     "grunt-html-dev": "^9.1.0",
     "portastic": "^1.0.1",
     "vnu-jar": "dev"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.2",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-eslint": "^20.1.0",
+    "grunt-istanbul": "^0.8.0",
+    "nsp": "^3.2.1"
   }
 }
