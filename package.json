@@ -19,9 +19,25 @@
     "url": "https://github.com/bennieswart/grunt-vnuserver/issues"
   },
   "homepage": "https://github.com/bennieswart/grunt-vnuserver#readme",
+  "scripts": {
+    "prepare": "nsp check",
+    "lint": "grunt eslint",
+    "test": "grunt",
+    "coverage": "grunt instrument && GRUNT_VNUSERVER_COVERAGE=1 grunt"
+  },
+  "engines": {
+    "node": ">=6"
+  },
   "dependencies": {
     "grunt-html": "^8.2.1",
     "portastic": "^1.0.1",
     "vnu-jar": "^17.1.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.2",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-eslint": "^20.1.0",
+    "grunt-istanbul": "^0.8.0",
+    "nsp": "^3.2.1"
   }
 }
