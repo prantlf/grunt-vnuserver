@@ -1,8 +1,7 @@
 # grunt-vnuserver-dev
 
-[![Code Climate](https://img.shields.io/codeclimate/github/prantlf/grunt-vnuserver-dev.svg)](https://codeclimate.com/github/prantlf/grunt-vnuserver-dev)
-[![Dependency Status](https://img.shields.io/david/prantlf/grunt-vnuserver-dev.svg)](https://david-dm.org/prantlf/grunt-vnuserver-dev)
-[![devDependency Status](https://img.shields.io/david/dev/prantlf/grunt-vnuserver-dev.svg)](https://david-dm.org/prantlf/grunt-vnuserver-dev#info=devDependencies)
+[![Dependency Status](https://img.shields.io/david/prantlf/grunt-vnuserver.svg)](https://david-dm.org/prantlf/grunt-vnuserver)
+[![devDependency Status](https://img.shields.io/david/dev/prantlf/grunt-vnuserver.svg)](https://david-dm.org/prantlf/grunt-vnuserver#info=devDependencies)
 
 [Grunt][grunt] plugin for starting the [vnu.jar markup checker][vnujar] in server mode.
 Plays well with [grunt-html-dev][grunt-html-dev] for faster HTML validation by only starting vnu.jar once, as startup can take a few seconds.
