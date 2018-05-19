@@ -8,7 +8,6 @@ module.exports = function (grunt) {
     grunt.registerTask('vnuserver', 'Start the Nu Html Checker server.', function () {
         let opt = this.options({port: 8888, skippable: false, persist: false, useAvailablePort: false});
         let done = this.async();
-        let taskTarget = this.target;
 
         start(opt.port);
 
@@ -33,8 +32,8 @@ module.exports = function (grunt) {
                     return;
                 }
 
-                grunt.config.set('vnuserver.' + taskTarget + '.options.port', port);
-                grunt.event.emit('vnuserver.' + taskTarget + '.listening', port);
+                grunt.config.set('vnuserver.options.port', port);
+                grunt.event.emit('vnuserver.listening', port);
 
                 let child;
                 let cleanup = function () {
@@ -60,7 +59,7 @@ module.exports = function (grunt) {
                     }
                     let args = [(java.arch === 'ia32' ? '-Xss512k' : ''), '-cp', jar, 'nu.validator.servlet.Main', port].filter(x => x);
                     let vnustartup = grunt.log.write('Starting vnuserver on port ' + port + '...');
-                    child = grunt.util.spawn({cmd: 'java', args: args}, function(error, stdout, stderr) {
+                    child = grunt.util.spawn({cmd: 'java', args: args}, function(error /*, stdout, stderr*/) {
                         if (error && (error.code !== 1 || error.killed || error.signal)) {
                             done(false);
                         }

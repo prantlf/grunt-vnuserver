@@ -110,7 +110,7 @@ module.exports = function (grunt) {
     grunt.initConfig({
         vnuserver: {
             // Name the task to be able to listen to its events.
-            server: {
+            options: {
                 // Start with the first free ephemeral port.
                 port: 49152,
                 // Try other ports, up to port + 30, if the first one is not free.
@@ -143,8 +143,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Obtain the port, which the vnu server is listening to.
-    grunt.event.on('vnuserver.server.listening', function (port) {
+    grunt.event.on('vnuserver.listening', function (port) {
         vnuPort = port;
+        // vnuPort = grunt.config.get('vnuserver.options.port');
     });
 
     grunt.registerTask('default', ['vnuserver', 'watch']);
