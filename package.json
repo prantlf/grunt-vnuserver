@@ -18,16 +18,12 @@
   "bugs": {
     "url": "https://github.com/prantlf/grunt-vnuserver/issues"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/prantlf/grunt-html.git"
-  },
   "homepage": "https://github.com/prantlf/grunt-vnuserver#readme",
   "engines": {
     "node": ">=6"
   },
   "dependencies": {
-    "grunt-html": "^8.2.1",
+    "grunt-html-dev": "^9.1.0",
     "portastic": "^1.0.1",
     "vnu-jar": "dev"
   }

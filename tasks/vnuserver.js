@@ -1,4 +1,4 @@
-let javadetect = require('grunt-html/lib/javadetect');
+let javadetect = require('grunt-html-dev/lib/javadetect');
 let jar = require('vnu-jar');
 let portastic = require('portastic');
 
