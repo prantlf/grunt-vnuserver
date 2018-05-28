@@ -29,9 +29,9 @@
     "node": ">=6"
   },
   "dependencies": {
-    "grunt-html": "^8.2.1",
+    "grunt-html": "^9.0.0",
     "portastic": "^1.0.1",
-    "vnu-jar": "^17.1.0"
+    "vnu-jar": "^18.3.0"
   },
   "devDependencies": {
     "grunt": "^1.0.2",
