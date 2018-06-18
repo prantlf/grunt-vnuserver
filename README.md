@@ -6,7 +6,7 @@
 [Grunt][grunt] plugin for starting the [vnu.jar markup checker][vnujar] in server mode.
 Plays well with [grunt-html-dev][grunt-html-dev] for faster HTML validation by only starting vnu.jar once, as startup can take a few seconds.
 
-This fork publishes a new `grunt-vnuserver-dev` NPM module, which depends on `vnu-jar@dev` instead of the latest release of `vnu-jar`. The [W3C Markup Validation Service](https://validator.w3.org/) uses the *development version* of `vnu-jar` too. If you want to get consistent results from on-line and off-line testing, you should use `grunt-vnuserver-dev` instead of `grunt-vnuserver` in your project.
+This fork publishes a new `grunt-vnuserver-dev` NPM module, which depends on `vnu-jar@next` instead of the latest release of `vnu-jar`. The [W3C Markup Validation Service](https://validator.w3.org/) uses the *development version* of `vnu-jar` too. If you want to get consistent results from on-line and off-line testing, you should use `grunt-vnuserver-dev` instead of `grunt-vnuserver` in your project.
 
 ## Getting Started
 
