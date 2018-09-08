@@ -54,9 +54,6 @@ module.exports = function (grunt) {
                     if (err) {
                         throw err;
                     }
-                    if (java.version[0] !== '1' || (java.version[0] === '1' && java.version[2] < '8')) {
-                        throw new Error('\nUnsupported Java version used: ' + java.version + '. v1.8 is required!');
-                    }
                     let args = [(java.arch === 'ia32' ? '-Xss512k' : ''), '-cp', jar, 'nu.validator.servlet.Main', port].filter(x => x);
                     let vnustartup = grunt.log.write('Starting vnuserver on port ' + port + '...');
                     child = grunt.util.spawn({cmd: 'java', args: args}, function(error /*, stdout, stderr*/) {
