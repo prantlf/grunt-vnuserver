@@ -1,5 +1,6 @@
 let javadetect = require('grunt-html-dev/lib/javadetect');
 let jar = require('vnu-jar');
+let path = require('path');
 let portastic = require('portastic');
 
 let MAX_PORTS = 30;
@@ -54,7 +55,13 @@ module.exports = function (grunt) {
                     if (err) {
                         throw err;
                     }
-                    let args = [(java.arch === 'ia32' ? '-Xss512k' : ''), '-cp', jar, 'nu.validator.servlet.Main', port].filter(x => x);
+                    let args = [
+                      (java.arch === 'ia32' ? '-Xss512k' : ''),
+                      '-Dnu.validator.servlet.log4j-properties=' +
+                        path.join(__dirname, 'log4j.properties'),
+                      '-Dnu.validator.servlet.read-local-log4j-properties=1',
+                      '-cp', jar, 'nu.validator.servlet.Main', port
+                    ].filter(x => x);
                     let vnustartup = grunt.log.write('Starting vnuserver on port ' + port + '...');
                     child = grunt.util.spawn({cmd: 'java', args: args}, function(error /*, stdout, stderr*/) {
                         if (error && (error.code !== 1 || error.killed || error.signal)) {
@@ -62,7 +69,7 @@ module.exports = function (grunt) {
                         }
                     });
                     child.stderr.on('data', function (chunk) {
-                        if (chunk.toString().indexOf('INFO:oejs.Server:main: Started') >= 0) {
+                        if (chunk.toString().indexOf('org.eclipse.jetty.server.Server: Started') >= 0) {
                             vnustartup.ok();
                             done();
                         }
